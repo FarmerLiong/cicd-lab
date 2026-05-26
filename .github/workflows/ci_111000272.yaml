@@ -22,6 +22,12 @@ jobs:
  
       - name: TypeScript typecheck
         run: npm run typecheck
+        
+      - name: Prettier check
+        run: npm run format:check
+
+      - name: Run tests
+        run: npm run test -- --reporter=junit --outputFile=test-results/junit.xml
 
       - name: Publish test results
         uses: mikepenz/action-junit-report@v4
