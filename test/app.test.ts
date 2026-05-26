@@ -15,14 +15,14 @@ describe('Fastify app', () => {
   });
 
   it('GET / returns app message and version', async () => {
-    // const app = buildApp({ logger: false });
-    // const response = await app.inject({
-    //   method: 'GET',
-    //   url: '/'
-    // });
+    const app = buildApp({ logger: false });
+    const response = await app.inject({
+      method: 'GET',
+      url: '/'
+    });
 
     expect(response.statusCode).toBe(200);
-    expect(response.json().message).toBe('CI/CD Lab Fastify app is running');
+    expect(response.json().message).toBe('CI/CD Lab Fastify app is not running');
     await app.close();
   });
 });
